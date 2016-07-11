@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>趣处</title>
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<style type="text/css">
+.container { margin: 0 15px; }
+.pro-header > img, .pro-info h3 > img { display: block; max-width: 100%; }
+.pro-header { margin: 15px 0 22px; }
+.main { padding-bottom: 90px; }
+.pro-info h3 { width: 60px; height: 60px; margin: 0 auto; }
+.pro-info p { font-size: 20px; color: #666; margin: 0 0 25px;text-align:center;}
+.btn-primary { background-color: #333333; border-radius: 6px; text-align: center; padding: 12px 20px; display: inline-block; color: #FFFFFF; font-size: 18px; width: 70%; text-decoration:none;}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {box-shadow:0 4px 10px rgba(0,0,0,.175);text-decoration: none;}
+.footer { position: fixed; background-color: #333333; padding: 10px 15px; height: 68px; color: #FFF; bottom: 0; width: 100%; left: 0; right: 0; overflow: hidden; }
+.logo { background: url(../images/logo.png) left center no-repeat; background-size: auto 48px; display: inline-block; height: 48px; width: 150px; }
+.btn-download { border: 1px solid #FFF; color: #FFF; height: 48px; line-height: 48px; width: 96px; border-radius: 12px; text-align: center; display: inline-block; position: absolute; right: 30px; top: 10px; font-size: 18px; text-decoration: none; transition: all ease-in-out 0.2s; }
+.btn-download:hover, .btn-download:focus, .btn-download:active { border-color: #ffd300; color: #000; background-color: #ffd300; }
+</style>
+</head>
+
+<body>
+<div class="main">
+    <div class="container">
+        <div class="pro-header"><img src="http://7xo7f0.com1.z0.glb.clouddn.com/402-default-app-place-cover?imageMogr2/thumbnail/800x/format/webp" alt=""/></div>
+        <div class="pro-info">
+            <h3><img src="../images/icon_smile.png" alt=""/></h3>
+            <p>你错过了一个和朋友共度美好时光的机会，但是你们友谊的小船并不会因此倾翻</p>
+        </div>
+	<p style="text-align:center;"><a href="#" class="btn-primary"><span id="timers">5</span>S后查看详情</a></p>
+    </div>
+</div>
+<div class="footer"> <a href="#" class="logo"></a><a target="_blank" id ="downLoadA" href="#" class="btn-download">下载</a> </div>
+<script>
+    var a = document.getElementById("downLoadA");
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/iPhone\sOS/i) == "iphone os") {
+	a.href = "http://a.app.qq.com/o/simple.jsp?pkgname=co.quchu.quchu";
+    } else {
+	a.href = 'http://tcdn.quchu.co/app-quchu_official-release.apk';
+    }
+    // 判断是否支持WEBP
+    function checkWebp() {
+        try{
+                return(document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
+        }catch(err) {
+                return false;
+        };
+    }
+   // 如果图片中有用webp格式化的去除该代码 
+   if(!checkWebp()){
+       var images =document.getElementsByTagName("img");
+       for (var i =0; i < images.length; i++) {
+          images[i].src = images[i].src.replace('/format/webp', '');
+       }
+   }   
+   var t=setTimeout("timedCount()",500);
+       function timedCount()  {
+       var tim=document.getElementById("timers");
+       var time=parseInt(tim.innerHTML);
+       document.getElementById("timers").innerHTML = time;
+       if( t !=null && time==0){
+           clearTimeout(t);
+	   window.location.href="../place/place_info_402.html"
+	   return;
+       }
+       time--;
+       tim.innerHTML = time;
+       t=setTimeout("timedCount()",1000)
+    }
+</script>
+</body>
+</html>
