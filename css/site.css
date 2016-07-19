@@ -41,11 +41,13 @@
 	body{min-width: 768px;}
 	.day-night-box{top:180px !important;}
 	.container{max-width:100%;width:auto;padding-left:15px;padding-right:15px;height:auto !important;position: static !important;margin-top: 0 !important;}
+
+	.coreBig{margin: 0px auto 20px  !important;}
 	.swiper-container-a{width:1024px;height:100%;max-width: 1024px;margin:0;overflow:hidden;}
 	.phone-box{width:360px;}
 	.phone-box > img{display:block;width:100%;}
 	.intro{margin-left:400px;padding-top:10px;}
-	.h3{font-size:30px !important;}
-	.h5{font-size:22px !important;}
+	.h3{font-size:30px !important;    margin: 0 auto 15px !important;}
+	.h5{font-size:22px !important;    margin: 0 0 15px !important;}
 }
 /* end 解决平板电脑的适配问题 */
