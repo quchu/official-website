@@ -41,8 +41,8 @@ html, body { height: 100%; }
 .intro-title{margin:2% auto 3%;text-align:center;font-size:22px;font-weight:bold;}
 .intro-title span{display:inline-block;border-bottom:4px solid #ffd300;}
 .intro-content{margin:2% 5% 4%;position:relative;z-index:5;}
-.intro-icon-group{display:flex; flex-direction:row; position:relative;z-index:5;}
-.intro-icon-box{ flex:1;padding:0 6%;text-align:center;}
+.intro-icon-group{display:flex; flex-direction:row; position:relative;z-index:5;display:block;overflow:hidden;clear:both;}
+.intro-icon-box{ flex:1;padding:0 6%;text-align:center;float:left;width:33.3333333%;}
 .intro-icon-box h3{margin:4% auto 0;font-size:18px;font-weight:bold;}
 .intro-foot-img{width:100%;position:absolute;bottom:0;left:0;right:0;overflow:hidden;z-index:0;height:20%;}
 /* end 第二页 */
@@ -51,8 +51,8 @@ html, body { height: 100%; }
 .core-title{margin:18% auto 3%;text-align:center;font-size:22px;font-weight:bold;}
 .core-title span{display:inline-block;border-bottom:4px solid #ffd300;}
 .core-content{margin:2% 5% 4%;position:relative;z-index:5;}
-.core-item-group{display:flex; flex-direction:row; position:relative;z-index:5;}
-.core-item-box{flex:1;padding:0 6%;text-align:center;}
+.core-item-group{display:flex; flex-direction:row; position:relative;z-index:5;display:block;overflow:hidden;clear:both;}
+.core-item-box{flex:1;padding:0 6%;text-align:center;float:left;width:33.3333333%;}
 .core-item-box > img{width:75%;margin:0 auto;}
 
 .core-info-content{opacity:0;transition:all ease-in-out 0.2s;position:absolute;top:110%;left:5%;right:5%;}
@@ -63,8 +63,8 @@ html, body { height: 100%; }
 .job-foot-img > img,.avatar-big-img > img,.job-item-box > img{display:block;max-width:100%;}
 .job-title{margin:2% auto 3%;text-align:center;font-size:22px;font-weight:bold;}
 .job-title span{display:inline-block;border-bottom:4px solid #ffd300;}
-.job-item-group{display:flex; flex-direction:row; position:relative;z-index:5;}
-.job-item-box{flex:1;padding:0;text-align:center; }
+.job-item-group{display:flex; flex-direction:row; position:relative;z-index:5;display:block;overflow:hidden;clear:both;}
+.job-item-box{flex:1;padding:0;text-align:center;float:left;width:20%; }
 .job-item-box > img{width:50%;transition:all ease-in-out 0.2s;margin:0 auto;-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter: grayscale(100%);filter: grayscale(100%);filter: gray;}
 .job-item-box.active > img{transform:scale(1.2,1.2);-webkit-filter: grayscale(0);-moz-filter: grayscale(0);-ms-filter: grayscale(0);-o-filter: grayscale(0);filter: grayscale(0);filter: gray;}
 .job-item-panel-group{position:relative;z-index:5;}
