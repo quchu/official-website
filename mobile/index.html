@@ -18,7 +18,7 @@
             <div class="icon-title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><img src="images/index_title.png" alt="一款知道您兴趣的app"/></div>
             <div class="footer-img ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"><img src="images/index_body_bg.png" alt=""/></div>
             <div class="icon-plane ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s"><img src="images/index_plane.png"  alt=""/></div>
-            <div class="btn-group"> <a href="https://itunes.apple.com/us/app/qu-chu-cheng-shi-lu-xing-mei/id1053389120" class="btn-black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">iPhone下载</a><a href="http://tcdn.quchu.co/app-quchu_official-release.apk" class="btn-black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">Android下载</a> </div>
+            <div class="btn-group"> <a id="iosAid" href="#" class="btn-black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">iPhone下载</a><a href="http://tcdn.quchu.co/app-quchu_official-release.apk" class="btn-black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">Android下载</a> </div>
             <div class="icon-weixin ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"><img src="images/index_weixin.png" alt="微信二维码"/></div>
             <!-- end  第一页 --> 
         </div>
@@ -189,6 +189,32 @@
 <script src="js/swiper-3.3.1.jquery.min.js"></script> 
 <script src="js/swiper.animate1.0.2.min.js"></script> 
 <script type="text/javascript">
+	sUserAgent = navigator.userAgent.toLowerCase();   
+	bIsIpad = sUserAgent.match(/ipad/i) == "ipad";     
+	bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";    
+	bIsAndroid = sUserAgent.match(/android/i) == "android";
+	var weixin = sUserAgent.match(/MicroMessenger/i) == "micromessenger";
+    var qq =navigator.userAgent.match(/QQ\//i) == "QQ/";
+    // 判断是否是微信
+	function is_weixin(){  
+	    var ua = navigator.userAgent.toLowerCase();  
+	    if(ua.match(/MicroMessenger/i)=="micromessenger") {  
+	        return true;  
+	    } else {  
+	        return false;  
+	    }  
+	}
+    // 当是微信的时候
+	function download(){
+		if(is_weixin()){
+		  	window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=co.quchu.quchu";
+		}else{
+			window.location.href = "https://itunes.apple.com/us/app/qu-chu-cheng-shi-lu-xing-mei/id1053389120";
+	    }
+	}
+	$("#iosAid").on("click",function(){
+		download();
+	});
   $(function(){
       //整站的分页
       var mySwiper = new Swiper (".swiper-container-a", {
