@@ -44,7 +44,7 @@
                         <table width="80%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>
-                                    <td><a href="https://itunes.apple.com/us/app/qu-chu-cheng-shi-lu-xing-mei/id1053389120" target="_blank" class="btn-black ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">iPhone下载</a></td>
+                                    <td><a id="iosAid" href="http://a.app.qq.com/o/simple.jsp?pkgname=co.quchu.quchu" target="_blank" class="btn-black ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">iPhone下载</a></td>
                                     <td rowspan="2"><div class="img-download ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s"></div></td>
                                 </tr>
                                 <tr>
@@ -284,6 +284,30 @@
 <script src="js/swiper.animate1.0.2.min.js"></script> 
 <script type="text/javascript">
 window.onload = function() {
+	var agent = "ios";
+	var is_ios = "1";
+	sUserAgent = navigator.userAgent.toLowerCase();   
+	bIsIpad = sUserAgent.match(/ipad/i) == "ipad";     
+	bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";    
+	bIsAndroid = sUserAgent.match(/android/i) == "android";
+	var weixin = sUserAgent.match(/MicroMessenger/i) == "micromessenger";
+    var qq =navigator.userAgent.match(/QQ\//i) == "QQ/";
+    // 判断是否是微信
+	function is_weixin(){  
+	    var ua = navigator.userAgent.toLowerCase();  
+	    if(ua.match(/MicroMessenger/i)=="micromessenger") {  
+	        return true;  
+	    } else {  
+	        return false;  
+	    }  
+	}
+	console.info(is_weixin());
+    // 当是微信的时候
+	if(is_weixin()){
+		$("#iosAid").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=co.quchu.quchu"); 
+	}else{
+		$("#iosAid").attr("href","https://itunes.apple.com/us/app/qu-chu-cheng-shi-lu-xing-mei/id1053389120");
+	}
     //根据时间不同加载不同的css
     var d = new Date().getHours();
     if(d>6 && d < 18){
